@@ -1,0 +1,20 @@
+zoldyeick
+-:bj-ME#<G>5wQX
+34.87.25.167
+
+bucket size
+gsutil du -sh gs://my-bucket-1/
+
+downloading the entire bucket
+gsutil -m cp -r dir gs://sql-db-testing/* .
+
+gsutil cp [-r if repository] gs://sql-db-testing/commits/commits-000000000001 C:\Users\alamo248\Downloads
+gs://sql-db-testing/commits/commits-000000000001
+gsutil -m cp -R gs://sql-db-testing/commits/commits-000000000001 ./downloadtolocal
+gsutil -m cp -r dir gs://sql-db-testing/commits/commits-000000000001
+gsutil cp gs://sql-db-testing/commits/commits-* .
+C:\Users\alamo248\Downloads>gsutil cp gs://sql-db-testing/commits/commits-* .
+NOTE: You are performing a sequence of gsutil operations that may
+run significantly faster if you instead use gsutil -m cp ... Please
+see the -m section under "gsutil help options" for further information
+about when gsutil -m can be advantageous.

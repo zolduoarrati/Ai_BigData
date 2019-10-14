@@ -1,0 +1,99 @@
+['gs://sql-db123/commits-*.csv']
+gs://sql-db123/commits
+
+gs://sql-db-testing/commits-1-000000000080.json
+gs://sql-db-testing/commits-table-5-000000000010.csv
+gs://my-bucket/file-name-<worker number>-000000000080.json
+
+https://console.cloud.google.com/bigquery?project=molten-method-230908&p=molten-method-230908&d=ghtorrent&t=commits&page=table
+https://bigquery.cloud.google.com/createtable/ghtorrent-bq:ght
+
+/*
+SELECT
+  u.country_code,
+  COUNT(pr.id) AS total_projects
+FROM
+  [ghtorrent-bq.ght.users] u
+JOIN 
+    [ghtorrent-bq.ght.projects] pr
+ON
+  u.id = pr.owner_id
+GROUP BY
+  u.country_code
+ORDER BY
+  total_projects DESC
+*/
+
+SELECT c.id,u.country_code,c.sha,c.author_id,c.committer_id,c.project_id,c.created_at
+FROM [ghtorrent-bq.ght.users] u
+JOIN [ghtorrent-bq.ght.projects] pr ON u.id = pr.owner_id 
+JOIN [ghtorrent-bq.ght.commits] c ON pr.id = c.project_id
+where u.country_code in ('us','cn','ru','gb')
+
+--SELECT * FROM [ghtorrent-bq.ght.users] u where country_code in ('us','cn','ru','gb')
+
+
+SELECT c.id as id,u.country_code as country_code,c.sha as sha,c.author_id as author_id,c.committer_id as committer_id,c.project_id as project_id,c.created_at as created_at
+FROM [ghtorrent-bq.ght.users] u
+JOIN [ghtorrent-bq.ght.projects] pr ON u.id = pr.owner_id 
+JOIN [ghtorrent-bq.ght.commits] c ON pr.id = c.project_id
+where country_code in ('us','cn','in','gb','de','ca','br','jp','ru','fr','nl','es','au','ua','pl','kr','hk','it','se','id','ch','tw','mx')
+
+SELECT cm.id as id,u.country_code as country_code,cm.user_id as user_id,
+cm.body as body,cm.line as line,cm.position as position,cm.comment_id as comment_id,cm.created_at as created_at
+FROM [ghtorrent-bq.ght.users] u
+JOIN [ghtorrent-bq.ght.commit_comments] cm ON u.id = cm.user_id 
+where country_code in ('us','cn','in','gb','de','ca','br','jp','ru','fr','nl','es','au','ua','pl','kr','hk','it','se','id','ch','tw','mx')
+
+
+SELECT cm.id as id,u.country_code as country_code,cm.user_id as user_id,
+cm.body as body,cm.line as line,cm.position as position,cm.comment_id as comment_id,cm.created_at as created_at
+FROM [ghtorrent-bq.ght.users] u
+JOIN [ghtorrent-bq.ght.projects] pr ON u.id = pr.owner_id 
+JOIN [ghtorrent-bq.ght.commits] c ON pr.id = c.project_id
+join [ghtorrent-bq.ght.commit_comments] cm on c.id = cm.commit_id
+where country_code in ('us','cn','in','gb','de','ca','br','jp','ru','fr','nl','es','au','ua','pl','kr','hk','it','se','id','ch','tw','mx')
+
+SELECT c.id as id,u.country_code as country_code,c.sha as sha,
+c.author_id as author_id,c.committer_id as committer_id,c.project_id as project_id,c.created_at as created_at
+FROM [ghtorrent-bq.ght_2018_04_01.users] u
+JOIN [ghtorrent-bq.ght_2018_04_01.commits] c ON u.id = cm.author_id 
+where country_code in ('us','cn','in','gb','de','ca','br','jp','ru','fr','nl','es','au','ua','pl','kr','hk','it','se','id','ch','tw','mx')
+
+SELECT c.id as id,u.country_code as country_code,c.sha as sha,
+c.author_id as author_id,c.committer_id as committer_id,c.project_id as project_id,c.created_at as created_at
+FROM [ghtorrent-bq.ght_2018_04_01.users] u
+JOIN [ghtorrent-bq.ght_2018_04_01.commits] c ON u.id = cm.author_id 
+where country_code in ('us','cn','in','gb','de','ca','br','jp','ru','fr','nl','es','au','ua','pl','kr','hk','it','se','id','ch','tw','mx')
+
+select pr.id as id, pr.url as url, pr.owner_id as owner_id,u.country_code as country_code, pr.name as name, pr.description as description, pr.language as language,
+pr.created_at as created_at, pr.forked_from as forked_from, pr.deleted as deleted, pr.updated_at as updated_at, pr.forked_commit_id as forked_commit_id
+FROM [ghtorrent-bq.ght_2018_04_01.users] u
+join [ghtorrent-bq.ght_2018_04_01.projects] pr ON u.id = pr.owner_id 
+where u.country_code in ('us','cn','in','gb','de','ca','br','jp','ru','fr','nl','es','au','ua','pl','kr','hk','it','se','id','ch','tw','mx')
+
+
+select c.*,u.country_code as country_code
+FROM [ghtorrent-bq.ght_2018_04_01.users] u
+join [ghtorrent-bq.ght_2018_04_01.commits] c ON u.id = c.committer_id 
+where u.country_code in ('us','cn','in','gb','de','ca','br','jp','ru','fr','nl','es','au','ua','pl','kr','hk','it','se','id','ch','tw','mx')
+
+
+select plc.*,u.country_code as country_code
+FROM [ghtorrent-bq.ght_2018_04_01.users] u
+join [ghtorrent-bq.ght_2018_04_01.projects] pr ON u.id = pr.owner_id
+join [ghtorrent-bq.ght_2018_04_01.pull_requests] pl ON pr.id = pl.head_repo_id
+join [ghtorrent-bq.ght_2018_04_01.pull_request_commits] plc ON pl.id = plc.pull_request_id
+where u.country_code in ('us','cn','in','gb','de','ca','br','jp','ru','fr','nl','es','au','ua','pl','kr','hk','it','se','id','ch','tw','mx')
+
+select or.*,u.country_code as country_code
+FROM [ghtorrent-bq.ght_2018_04_01.users] u
+join [ghtorrent-bq.ght_2018_04_01.organization_members] or ON u.id = or.org_id
+
+select w.*,u.country_code as country_code
+FROM [ghtorrent-bq.ght_2018_04_01.users] u
+join [ghtorrent-bq.ght_2018_04_01.projects] pr ON u.id = pr.owner_id
+join [ghtorrent-bq.ght_2018_04_01.watchers] w ON pr.id = w.repo_id
+where u.country_code in ('us','cn','in','gb','de','ca','br','jp','ru','fr','nl','es','au','ua','pl','kr','hk','it','se','id','ch','tw','mx')
+
+

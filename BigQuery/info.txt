@@ -1,0 +1,9 @@
+['gs://sql-db123/commits-*.csv']
+gs://sql-db123/commits
+
+gs://sql-db-testing/commits-1-000000000080.json
+gs://sql-db-testing/commits-table-5-000000000010.csv
+gs://my-bucket/file-name-<worker number>-000000000080.json
+
+https://console.cloud.google.com/bigquery?project=molten-method-230908&p=molten-method-230908&d=ghtorrent&t=commits&page=table
+https://bigquery.cloud.google.com/createtable/ghtorrent-bq:ght
