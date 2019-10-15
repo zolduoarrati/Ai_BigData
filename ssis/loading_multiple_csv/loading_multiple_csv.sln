@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "loading_multiple_csv", "loading_multiple_csv\loading_multiple_csv.dtproj", "{892B8200-7647-4363-AA52-0DF67CEBB4EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{892B8200-7647-4363-AA52-0DF67CEBB4EE}.Development|Default.ActiveCfg = Development
+		{892B8200-7647-4363-AA52-0DF67CEBB4EE}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F46F88B-AB37-4D58-9B18-19D75F4E8B56}
+	EndGlobalSection
+EndGlobal
