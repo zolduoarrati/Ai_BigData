@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{99E0D5CE-721C-4484-ABFA-BAD347E7A0F3}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{BD12505C-9E77-498E-AB02-89CE8C342B9A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -965,7 +965,7 @@
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="205,105"
-          Size="205,148"
+          Size="214,148"
           Id="Package\Foreach Loop Container"
           TopLeft="239,280" />
       </GraphLayout>
