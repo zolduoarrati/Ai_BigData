@@ -1,0 +1,32 @@
+I was given a single line script for Terminal command line that does the same (but with no headers). This script takes 20 seconds.
+for f in *.csv; do cat "`pwd`/$f" | tail -n +2 >> merged.csv; done
+
+Are you required to do this in Python? If you are open to doing this entirely in shell, all you'd need to do is first cat the header row from a randomly selected input .csv file into merged.csv before running your one-liner:
+cat a-randomly-selected-csv-file.csv | head -n1 > merged.csv
+for f in *.csv; do cat "`pwd`/$f" | tail -n +2 >> merged.csv; done
+
+Linux
+
+sed 1d file2.csv > file2noheader.csv
+cat file1.csv file2noheader.csv > outputfile.csv
+
+
+python
+import shutil
+
+#import csv files from folder
+path = r'data/US/market/merged_data'
+allFiles = glob.glob(path + "/*.csv")
+with open('someoutputfile.csv', 'wb') as outfile:
+    for i, fname in enumerate(allFiles):
+        with open(fname, 'rb') as infile:
+            if i != 0:
+                infile.readline()  # Throw away header on all but first file
+            # Block copy rest of file from input to output without parsing
+            shutil.copyfileobj(infile, outfile)
+            print(fname + " has been imported.")
+
+CMD
+copy *.csv combine.csv
+
+remove header from all csv files in a directory

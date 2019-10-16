@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
-    <Name>loading_multiple_csv</Name>
-    <LastWriteTime>2019-10-16T00:34:55.1329279Z</LastWriteTime>
+    <Name>Integration_ght_Project</Name>
+    <LastWriteTime>2019-10-16T03:59:00.6138423Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Package.dtsx</Name>
-      <LastWriteTime>2019-10-16T00:34:54.8279805Z</LastWriteTime>
+      <LastWriteTime>2019-10-16T03:59:00.2555212Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
