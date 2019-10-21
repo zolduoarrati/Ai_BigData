@@ -1,3 +1,12 @@
+git
+1-navigate to the directory that contains the the files
+2-move the first file that contain the headers into a new directory
+3-run this code to merge files into one file with no headers
+for f in *.csv; do cat "`pwd`/$f" | tail -n +2 >> merged.csv; done
+4-copy the resulted file into the new directory that contain the fist file and run this code to merge them together
+cat file1.csv merged.csv > outputfile.csv
+
+
 I was given a single line script for Terminal command line that does the same (but with no headers). This script takes 20 seconds.
 for f in *.csv; do cat "`pwd`/$f" | tail -n +2 >> merged.csv; done
 
