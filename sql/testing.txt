@@ -1,0 +1,57 @@
+SELECT b.Location, count(b.id ) total_badges
+FROM `modular-sorter-256519.stackoverflow.badges` b
+where Location = 'USA' or 
+  Location = 'United States' or 
+  Location = 'united states' or 
+  Location = 'US' or
+  Location = 'Alabama' or
+  Location = 'Alaska' or
+  Location = 'Arizona' or
+  Location = 'Arkansas' or
+  Location = 'California' or
+  Location = 'Colorado' or
+  Location = 'Connecticut' or
+  Location = 'Delaware' or
+  Location = 'Florida' or
+  Location = 'Hawaii' or
+  Location = 'Idaho' or
+  Location = 'Illinois' or
+  Location = 'Indiana' or
+  Location = 'Iowa' or 
+  Location = 'Kansas' or 
+  Location = 'Kentucky' or
+  Location = 'Louisiana' or
+  Location = 'Maine' or
+  Location = 'Maryland' or
+  Location = 'Massachusetts' or
+  Location = 'Michigan' or
+  Location = 'Minnesota' or
+  Location = 'Mississippi' or
+  Location = 'Missouri' or
+  Location = 'Montana' or
+  Location = 'Nebraska' or
+  Location = 'Nevada' or
+  Location = 'New Hampshire' or
+  Location = 'New Jersey' or
+  Location = 'New Mexico' or
+  Location = 'New York' or
+  Location = 'North Carolina' or
+  Location = 'North Dakota' or
+  Location = 'Ohio' or
+  Location = 'Oklahoma' or
+  Location = 'Oregon' or
+  Location = 'Pennsylvania' or
+  Location = 'Rhode Island' or
+  Location = 'South Carolina' or
+  Location = 'South Dakota' or
+  Location = 'Tennessee' or
+  Location = 'Texas' or
+  Location = 'Utah' or 
+  Location = 'Vermont' or 
+  Location = 'Virginia' or
+  Location = 'Washington' or
+  Location = 'West Virginia' or
+  Location = 'Wisconsin' or
+  Location = 'Wyoming'
+group by b.Location
+order by total_badges desc
