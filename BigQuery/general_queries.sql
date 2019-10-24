@@ -69,3 +69,15 @@ SELECT t.*,u.location--count(t.id) as total
 FROM `modular-sorter-256519.stackoverflow.users_usa` u
 join `modular-sorter-256519.stackoverflow.posts_tag_wiki_excerpt` b on u.id = b.owner_user_id
 join `modular-sorter-256519.stackoverflow.tags` t on b.id = t.excerpt_post_id 
+-----------------------------
+SELECT t.*,u.location--count(t.id) as total 
+FROM `modular-sorter-256519.stackoverflow.users_usa` u
+join `modular-sorter-256519.stackoverflow.posts_tag_wiki_excerpt` b on u.id = b.owner_user_id
+join `modular-sorter-256519.stackoverflow.tags` t on b.id = t.excerpt_post_id 
+order by t.count desc
+-------------------------------
+SELECT b.title,b.body,b.tags,b.answer_count,b.comment_count,b.score,u.location,t.*--count(t.id) as total 
+FROM `modular-sorter-256519.stackoverflow.users_usa` u
+join `modular-sorter-256519.stackoverflow.posts_tag_wiki` b on u.id = b.owner_user_id
+join `modular-sorter-256519.stackoverflow.tags` t on b.id = t.wiki_post_id 
+order by t.count desc
