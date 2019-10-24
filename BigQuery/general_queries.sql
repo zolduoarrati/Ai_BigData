@@ -64,3 +64,8 @@ location='ottawa' or
 location='milan' or
 location='ontario' or
 location='belfast'
+----------------------------
+SELECT t.*,u.location--count(t.id) as total 
+FROM `modular-sorter-256519.stackoverflow.users_usa` u
+join `modular-sorter-256519.stackoverflow.posts_tag_wiki_excerpt` b on u.id = b.owner_user_id
+join `modular-sorter-256519.stackoverflow.tags` t on b.id = t.excerpt_post_id 
