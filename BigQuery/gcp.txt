@@ -1,6 +1,4 @@
-zoldyeick
-G5sGo{Swa?Mrq;q
-35.240.130.16
+gsutil cp C:/Users/milani2025/Downloads/Compressed/StackOverflow.bak gs://stackbucket/
 
 bucket size
 gsutil du -sh gs://my-bucket-1/
