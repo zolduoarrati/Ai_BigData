@@ -78,6 +78,16 @@ order by t.count desc
 -------------------------------
 SELECT b.title,b.body,b.tags,b.answer_count,b.comment_count,b.score,u.location,t.*--count(t.id) as total 
 FROM `modular-sorter-256519.stackoverflow.users_usa` u
+-------------------------------
+SELECT
+  MIN(date) AS min_date,
+  MAX(date) AS max_date,
+  MIN(class) AS min_class_value,
+  MAX(class) AS max_class_value,
+  MIN(tag_based) AS min_tag_based,
+  MAX(tag_based) AS max_tag_based
+FROM
+  `modular-sorter-256519.stackoverflow.badges`
 join `modular-sorter-256519.stackoverflow.posts_tag_wiki` b on u.id = b.owner_user_id
 join `modular-sorter-256519.stackoverflow.tags` t on b.id = t.wiki_post_id 
 order by t.count desc
