@@ -110,3 +110,17 @@ SELECT
   MAX(post_type_id) AS Max_post_type_id
 FROM
   `modular-sorter-256519.stackoverflow.posts_answers`
+-----------------------------------------------
+SELECT
+  AVG(LENGTH(body)) AS avg_text,
+  AVG(comment_count) AS avg_comments,
+  Avg(CAST(answer_count AS int64)) as avg_answer,
+  MIN(creation_date) AS MinDate,
+  MAX(creation_date) AS MaxDate,
+  MIN(score) AS MinScore,
+  MAX(score) AS MaxScore,
+  MIN(post_type_id) AS Min_post_type_id,
+  MAX(post_type_id) AS Max_post_type_id,
+  Avg(view_count) as avg_views
+FROM
+  `modular-sorter-256519.stackoverflow.posts_questions` 
