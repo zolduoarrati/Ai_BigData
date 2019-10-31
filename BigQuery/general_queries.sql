@@ -95,3 +95,6 @@ order by t.count desc
 --INSERT INTO `modular-sorter-256519.stackoverflow.users` VALUES (7450866,'Nikita Popov',null,null,'2017-01-21 16:21:39.320 UTC','2019-08-08 09:41:31.203 UTC','saint petersburg',40,33,0,67,'https://lh3.googleusercontent.com/-PHqZ7qXLGp0/AAAAAAAAAAI/AAAAAAAAbY8/xIIH8p2-YQs/photo.jpg?sz=128','https://t.me/NikitaPopov');
 
 DELETE FROM `modular-sorter-256519.stackoverflow.users` where location = 'saint petersburg' or location = 'SAINT PETERSBURG'
+--------------------------------------
+SELECT AVG(length(text)) as avg,min(creation_date),max(creation_date),min(score),max(score)
+FROM `modular-sorter-256519.stackoverflow.comments`
