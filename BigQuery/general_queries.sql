@@ -124,3 +124,11 @@ SELECT
   Avg(view_count) as avg_views
 FROM
   `modular-sorter-256519.stackoverflow.posts_questions` 
+------------------------------------------------------
+SELECT
+  MIN(creation_date) as min_creationDate,
+  MAX(creation_date) as max_creationDate,
+  MIN(vote_type_id) as min_views,
+  MAX(vote_type_id) as max_views
+FROM
+  `modular-sorter-256519.stackoverflow.votes`
