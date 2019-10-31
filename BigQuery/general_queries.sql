@@ -132,3 +132,8 @@ SELECT
   MAX(vote_type_id) as max_views
 FROM
   `modular-sorter-256519.stackoverflow.votes`
+----------------------------------------------------
+SELECT location,count(id) as total_users
+FROM `modular-sorter-256519.stackoverflow.users_china`
+group by location
+order by location asc
