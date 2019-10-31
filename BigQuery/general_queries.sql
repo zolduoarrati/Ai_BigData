@@ -98,3 +98,15 @@ DELETE FROM `modular-sorter-256519.stackoverflow.users` where location = 'saint 
 --------------------------------------
 SELECT AVG(length(text)) as avg,min(creation_date),max(creation_date),min(score),max(score)
 FROM `modular-sorter-256519.stackoverflow.comments`
+--------------------------------------
+SELECT
+  AVG(LENGTH(body)) AS avg_text,
+  AVG(comment_count) AS avg_comments,
+  MIN(creation_date) AS MinDate,
+  MAX(creation_date) AS MaxDate,
+  MIN(score) AS MinScore,
+  MAX(score) AS MaxScore,
+  MIN(post_type_id) AS Min_post_type_id,
+  MAX(post_type_id) AS Max_post_type_id
+FROM
+  `modular-sorter-256519.stackoverflow.posts_answers`
