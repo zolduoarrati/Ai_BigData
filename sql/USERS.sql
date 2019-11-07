@@ -1,13 +1,3 @@
--- what is the total numbers of commits per user + name
-select u.id as user_id, u.login, x number_fo_commits from users u
-left join (
-	select committer_id, count(*) x from commits 
-	group by committer_id
-) uu on uu.committer_id = u.id order by x desc
-
--- what is the proggraming languages used by each user
-select distinct owner_id as user_id, language 
-from projects where language is not null
-order by owner_id
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:4085406a44761499aa3b981a2a03861311d02263244c7d38b28be0c5210a18f9
+size 428

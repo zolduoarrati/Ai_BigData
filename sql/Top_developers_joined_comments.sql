@@ -1,5 +1,3 @@
-select * from dbo.commit_1000_developers td
-join dbo.commit_comments  dc
-on td.user_id = dc.user_id
-where td.country_code like 'ru'
-order by td.user_id desc;
+version https://git-lfs.github.com/spec/v1
+oid sha256:b25461a76d0516cd2e09b5674ac57cb6652f3b4f2b9ca4bb80966a08d43a4520
+size 161
